@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>new doc</title>
-  </head>
+<html>
+  <head> </head>
   <body>
-    master commit 3 branhc1 commit 3
+    <h2><span>Add Product</span></h2>
+    <table>
+      <tbody>
+        <tr>
+          <td>Product Name</td>
+          <td><input type="text" class="product-text" /></td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td><input type="text" class="category-text" /></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td><input type="text" class="description-text" /></td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td><input type="text" class="price" /></td>
+        </tr>
+        <tr>
+          <td>Available Quantity</td>
+          <td><input type="text" class="quantity" /></td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>
+              <br />
+              <input
+                style="margin-left: 105%"
+                type="button"
+                class="submit-btn"
+                value="Submit"
+              />
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
-  <h1>Stashed policy is now added..real stash data is now appende</h1>
-  <p>about us</p>
+
+  <script>
+    let categoryText = document.querySelector(".category-text");
+    let productText = document.querySelector(".product-text");
+    let descriptionText = document.querySelector(".description-text");
+    let price = document.querySelector(".price");
+    let quantity = document.querySelector(".quantity");
+    let submitBtn = document.querySelector(".submit-btn");
+
+    //This regex allows only char with length 3,30 and space between chars.
+    submitBtn.addEventListener("click", validateData);
+
+    console.log(categoryText);
+
+    function validateData() {
+      let regex = /^[a-zA-Z ]{3,30}$/;
+
+      if (!regex.test(categoryText.value)) alert("Invalid category format");
+
+      if (!regex.test(productText.value)) alert("Invalid product format");
+
+      if (descriptionText.value.length < 25)
+        alert("Description should be minumum 25 length long");
+
+      console.log(price.value, quantity.value);
+      if (
+        isNaN(price.value) ||
+        isNaN(quantity.value) ||
+        price.value.length <= 0 ||
+        quantity.value.length <= 0
+      ) {
+        alert("Price and Quantity should be number only");
+        console.log(parseInt(price.value) < 5);
+      } else {
+        if (parseInt(price.value) < 5) alert("Price should be minimum $5");
+      }
+    }
+  </script>
 </html>
