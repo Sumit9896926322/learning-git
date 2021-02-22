@@ -54,8 +54,6 @@
     //This regex allows only char with length 3,30 and space between chars.
     submitBtn.addEventListener("click", validateData);
 
-    console.log(categoryText);
-
     function validateData() {
       let regex = /^[a-zA-Z ]{3,30}$/;
 
@@ -66,18 +64,14 @@
       if (descriptionText.value.length < 25)
         alert("Description should be minumum 25 length long");
 
-      console.log(price.value, quantity.value);
       if (
         isNaN(price.value) ||
         isNaN(quantity.value) ||
         price.value.length <= 0 ||
         quantity.value.length <= 0
-      ) {
+      )
         alert("Price and Quantity should be number only");
-        console.log(parseInt(price.value) < 5);
-      } else {
-        if (parseInt(price.value) < 5) alert("Price should be minimum $5");
-      }
+      else if (parseInt(price.value) < 5) alert("Price should be minimum $5");
     }
   </script>
 </html>
