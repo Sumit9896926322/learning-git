@@ -1,1 +1,1 @@
-console.log("logic fot landingJS page goes here");
+alert("logic for landing js  page goes here");
