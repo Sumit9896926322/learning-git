@@ -1,1 +1,1 @@
-console.log("logic fot landing page goes here");
+console.log("logic fot landingJS page goes here");
