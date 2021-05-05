@@ -1,0 +1,1 @@
+console.log("logic fot landingJS page goes here");
